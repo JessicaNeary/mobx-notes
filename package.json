@@ -1,8 +1,8 @@
 {
-  "name": "react-boilerplate",
+  "name": "mobx-notes",
   "version": "0.1.1",
-  "description": "A simple boilerplate for a react webpage",
-  "repository": "https://github.com/JessicaNeary/react-boilerplate.git",
+  "description": "Mobx-React practise",
+  "repository": "https://github.com/JessicaNeary/mobx-notes.git",
   "main": "server/index.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base public/ --hot --inline",
@@ -14,6 +14,10 @@
     "presets": [
       "es2015",
       "react"
+    ],
+    "plugins": [
+      "transform-decorators-legacy",
+      "transform-class-properties"
     ]
   },
   "author": "JessicaNeary",
@@ -21,11 +25,14 @@
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-register": "^6.18.0",
     "enzyme": "^2.7.0",
     "jsx-loader": "^0.13.2",
+    "mobx-react-devtools": "^4.2.11",
     "nodemon": "^1.11.0",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
@@ -38,6 +45,8 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "mobx": "^3.1.9",
+    "mobx-react": "^4.1.8",
     "react-router": "^3.0.1"
   }
 }
