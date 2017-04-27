@@ -2,6 +2,7 @@ import React from 'react'
 import { observer, inject } from 'mobx-react'
 
 import Note from './Note'
+import Edit from './Edit'
 
 @inject('store') @observer
 class Home extends React.Component {
@@ -13,7 +14,9 @@ class Home extends React.Component {
   render () {
     const list = this.props.store.notes.map((note, index) => {
       return (
-        <Note key={index} note={note} />
+        note.editing
+        ? <Edit key={index} note={note} />
+        : <Note key={index} note={note} />
       )
     })
     return (
@@ -23,7 +26,7 @@ class Home extends React.Component {
           {list}
         </ul>
         <div>
-          Add new: 
+          Add new:
           <input onKeyUp={(event) => this.addNew(event)} />
         </div>
       </div>
