@@ -1,6 +1,6 @@
 import { observable, computed, autorun } from 'mobx'
 
-class AppStore {
+class store {
     @observable notes = []
 
     constructor() {
@@ -11,11 +11,11 @@ class AppStore {
     @computed get remaining() {
       return (this.notes.filter(note => {
         return !note.completed
-      })).length()
+      })).length
     }
 
     @computed get report() {
-      return '${this.remaining} out of ${this.notes.length} tasks remaining'
+      return `${this.remaining} out of ${this.notes.length} tasks remaining`
     }
 
     addNote(text) {
@@ -26,5 +26,4 @@ class AppStore {
     }
 }
 
-const store = new AppStore()
-export default store
+export default new store()
