@@ -5,6 +5,11 @@ import Note from './Note'
 
 @inject('store') @observer
 class Home extends React.Component {
+  addNew (e) {
+    if(e.key === 'Enter') {
+      this.props.store.addNote(e.target.value)
+    }
+  }
   render () {
     const list = this.props.store.notes.map((note, index) => {
       return (
@@ -17,6 +22,10 @@ class Home extends React.Component {
         <ul>
           {list}
         </ul>
+        <div>
+          Add new: 
+          <input onKeyUp={(event) => this.addNew(event)} />
+        </div>
       </div>
     )
   }
