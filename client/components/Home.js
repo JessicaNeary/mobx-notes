@@ -5,7 +5,7 @@ import { observer, inject } from 'mobx-react'
 class Home extends React.Component {
   render () {
     const list = this.props.store.notes.map((note, index) => {
-      return <li key={index}>{note.text}</li>
+      return <li key={index} className={note.completed ? 'complete' : null}>{note.text}</li>
     })
     return (
       <div>
