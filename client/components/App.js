@@ -1,14 +1,11 @@
-import React from 'react'
-import DevTools from 'mobx-react-devtools'
-
-const App = props => {
-  return (
-    <div>
-      <h1>Title</h1>
-      {props.children}
-      <DevTools />
-    </div>
-  )
-}
-
-export default App
+"use strict";
+exports.__esModule = true;
+var React = require("react");
+var mobx_react_devtools_1 = require("mobx-react-devtools");
+var App = function (props) {
+    return (React.createElement("div", null,
+        React.createElement("h1", null, "Title"),
+        props.children,
+        React.createElement(mobx_react_devtools_1["default"], null)));
+};
+exports["default"] = App;
